@@ -12,7 +12,7 @@ A dotnet core DbContext Pagination Provider
 	* Pages, the total of pages fot that result
 	* Previous page number
 	* Next page number
-	* Validate if the current page has a previous or a nect page
+	* Validate if the current page has a previous or a next page
 
 ### NuGet installation
 PM> Install-Package DbContextPagination  
