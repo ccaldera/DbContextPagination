@@ -21,7 +21,7 @@ https://www.nuget.org/packages/DbContextPagination
 
 ### How to use with DbContext
 
-```chsarp
+```csharp
 var provider = new DbContextPaginationProvider<Product>(dbContext);
 
 var input = new PaginationProviderInput<Product>
@@ -33,9 +33,11 @@ var input = new PaginationProviderInput<Product>
 var page = provider.Get(input);
 ```
 
+where Product is an Entity inside DbContext
+
 ### How to use with a List<T>
 
-```chsarp
+```csharp
 var items = _dataProvider.GetProducts();
 
 var provider = new SimplePaginationProvider<Product>();
