@@ -2,6 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Version>1.0.0.2</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>DbContextPagination</PackageId>
+    <Authors>ccaldera</Authors>
+    <Company />
+    <Product>DbContextPagination</Product>
+    <Description>Create simple pagination handling for items in ASP.NET core for  MicrosoftEntityFramework and Simple list of items</Description>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/ccaldera/DbContextPagination</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ccaldera/DbContextPagination</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>ASP NET CORE DbContext Pages Pagination Paginator Provider Simple HasNext HasPrevious CurrentPage</PackageTags>
+    <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <FileVersion>1.0.0.2</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

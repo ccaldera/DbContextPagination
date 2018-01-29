@@ -57,8 +57,6 @@ namespace DbContextPagination.Test
         [Test]
         public void ShouldReturnDbContextPagination()
         {
-            var products = _dataProvider.GetProducts();
-
             var dbContext = _dataProvider.GetProductsMockDbContext();
             
             var provider = new DbContextPaginationProvider<Product>(dbContext);
