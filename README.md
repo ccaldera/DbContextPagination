@@ -15,7 +15,7 @@ A dotnet core DbContext Pagination Provider
 	* Validate if the current page has a previous or a nect page
 
 ### NuGet installation
-PM> Install-Package DbContextPagination
+PM> Install-Package DbContextPagination  
 https://www.nuget.org/packages/DbContextPagination
 
 
