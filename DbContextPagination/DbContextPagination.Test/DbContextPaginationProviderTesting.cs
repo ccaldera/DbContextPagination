@@ -2,33 +2,32 @@
 using DbContextPagination.Test.Providers;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace DbContextPagination.Test
 {
     [TestFixture]
-    public class SimplePaginationProviderTesting : BasePaginationProviderTesting
+    public class DbContextPaginationProviderTesting : BasePaginationProviderTesting
     {
-        private SimplePaginationProvider<Product> _provider;
-        private IEnumerable<Product> _items;
 
-        public SimplePaginationProviderTesting()
+        private DbContextPaginationProvider<Product> _provider;
+
+        public DbContextPaginationProviderTesting()
         {
-            _provider = new SimplePaginationProvider<Product>();
+            var dbContext = DataProvider.GetProductsMockDbContext();
 
-            _items = DataProvider.GetProducts();
+            _provider = new DbContextPaginationProvider<Product>(dbContext);
         }
+
 
         [Test]
         public void ShoulReturnValidResultsForFirstPage()
         {
-            var input = new SimplePaginationProviderInput<Product>
+            var input = new PaginationProviderInput<Product>
             {
-                Items = _items,
                 RequestedPage = 1,
                 ResultsPerPage = 3,
-                Where = i => i.Price > 150,                
+                Where = i => i.Price > 150,
                 OrderBy = sorting => sorting.OrderBy(i => i.Description).ThenBy(i => i.Price)
             };
 
@@ -40,9 +39,8 @@ namespace DbContextPagination.Test
         [Test]
         public void ShoulReturnValidResultsForMiddlePage()
         {
-            var input = new SimplePaginationProviderInput<Product>
+            var input = new PaginationProviderInput<Product>
             {
-                Items = _items,
                 RequestedPage = 2,
                 ResultsPerPage = 3,
                 OrderBy = sorting => sorting.OrderBy(i => i.Description).ThenBy(i => i.Price)
@@ -56,9 +54,8 @@ namespace DbContextPagination.Test
         [Test]
         public void ShoulReturnValidResultsForLastPage()
         {
-            var input = new SimplePaginationProviderInput<Product>
+            var input = new PaginationProviderInput<Product>
             {
-                Items = _items,
                 RequestedPage = 2,
                 ResultsPerPage = 3,
                 Where = i => i.Price > 150,
@@ -70,6 +67,7 @@ namespace DbContextPagination.Test
             ShoulReturnValidResultsForLastPage(page);
         }
 
+
         [Test]
         public void ShouldThrowExceptionOnNullInput()
         {
@@ -79,7 +77,7 @@ namespace DbContextPagination.Test
         [Test]
         public void ShouldThrowExceptionOnEmptyParameters()
         {
-            var input = new SimplePaginationProviderInput<Product>();
+            var input = new PaginationProviderInput<Product>();
 
             Assert.Throws(typeof(ArgumentOutOfRangeException), () => _provider.Get(input));
         }

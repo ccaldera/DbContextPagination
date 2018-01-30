@@ -22,9 +22,9 @@ namespace DbContextPagination
         {
             get
             {
-                if (CurrentPage == 1)
+                if (CurrentPage <= 1)
                     return null;
-                return ((CurrentPage - 1) * ResultsPerPage) + 1;
+                return CurrentPage - 1;
             }
         }
 
@@ -32,14 +32,8 @@ namespace DbContextPagination
         {
             get
             {
-                if (CurrentPage == Pages)
+                if (CurrentPage >= Pages)
                     return null;
-
-                var rightIndex = ResultsPerPage * CurrentPage;
-                if (Total < rightIndex)
-                {
-                    return Total;
-                }
 
                 return CurrentPage + 1;
             }
