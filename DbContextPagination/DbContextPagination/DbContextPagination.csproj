@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <Version>1.0.0.2</Version>
+    <Version>1.0.0.3</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>DbContextPagination</PackageId>
     <Authors>ccaldera</Authors>
@@ -14,9 +14,9 @@
     <RepositoryUrl>https://github.com/ccaldera/DbContextPagination</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
     <PackageTags>ASP NET CORE DbContext Pages Pagination Paginator Provider Simple HasNext HasPrevious CurrentPage</PackageTags>
-    <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
-    <AssemblyVersion>1.0.0.2</AssemblyVersion>
-    <FileVersion>1.0.0.2</FileVersion>
+    <PackageReleaseNotes>Fix for Navigation properties issue</PackageReleaseNotes>
+    <AssemblyVersion>1.0.0.3</AssemblyVersion>
+    <FileVersion>1.0.0.3</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
